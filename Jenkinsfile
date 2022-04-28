@@ -8,6 +8,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo '*******************Building A docker Image using Jenkins********************'
+                git 'https://github.com/sfordevops/april22devops.git'
             }
         }
 
