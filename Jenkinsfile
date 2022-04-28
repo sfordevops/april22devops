@@ -11,24 +11,23 @@ pipeline {
                 git 'https://github.com/sfordevops/april22devops.git'
             }
         }
+        
 
-    stages {
         stage('docker Build') {
             steps {
                 echo '*******************Building a docker Image********************'
                 sh 'docker build -t jenkins-doc-image .'
             }
         }
-    }
-    stages {
+    
+
         stage('Docker Tag') {
             steps {
                 echo '*******************Building a docker Image********************'
                 sh 'docker tag jenkins-doc-image sforcloud/jenkins-doc-image'
             }
         }
-    }
-    stages {
+    
         stage('Docker push') {
             steps {
                 echo 'Hello World'
@@ -36,10 +35,8 @@ pipeline {
             }
         }
     }
-
-
-  }
 }
+
 
 
 
