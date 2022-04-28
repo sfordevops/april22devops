@@ -19,7 +19,7 @@ pipeline {
                 sh 'docker build -t jenkins-doc-image .'
             }
         }
-
+    }
     stages {
         stage('Docker Tag') {
             steps {
@@ -27,6 +27,7 @@ pipeline {
                 sh 'docker tag jenkins-doc-image sforcloud/jenkins-doc-image'
             }
         }
+    }
     stages {
         stage('Docker push') {
             steps {
@@ -35,6 +36,9 @@ pipeline {
             }
         }
     }
+
+
+  }
 }
 
 
